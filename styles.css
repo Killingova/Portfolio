@@ -13,7 +13,7 @@ body {
     padding: 20px;
 }
 
-/* Header */
+/* Header mit Flexbox */
 header {
     background: #B4B8F0;
     padding: 20px 0;
@@ -23,10 +23,14 @@ header {
     z-index: 1000;
 }
 
-header .container {
+.header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.logo {
+    width: 120px;
 }
 
 nav ul {
@@ -48,7 +52,7 @@ nav ul li a:hover {
     color: #ffeb3b;
 }
 
-/* Hero Section */
+/* Hero-Bereich */
 .hero {
     text-align: center;
     padding: 80px 20px;
@@ -65,18 +69,13 @@ nav ul li a:hover {
     font-size: 1.2em;
 }
 
-/* Über mich */
-.about {
-    padding: 60px 20px;
-    background-color: #B4F0DA;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
 /* Projekte mit Grid */
 .projects {
     padding: 60px 20px;
     background-color: #B4F0EF;
+}
+
+.project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
@@ -88,49 +87,38 @@ nav ul li a:hover {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    text-align: center;
 }
 
 .project:hover {
     transform: scale(1.05);
 }
 
-/* Fähigkeiten mit Flexbox */
-.skills {
-    padding: 60px 20px;
-    background-color: #ACDBF0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.skills ul {
-    list-style: none;
-    padding: 0;
-}
-
-.skills li {
-    background: white;
-    padding: 10px;
-    margin: 5px;
+.project img {
+    width: 100%;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Kontakt */
-footer {
+/* Footer mit Flexbox */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background: #B4B8F0;
     color: white;
-    text-align: center;
     padding: 40px 20px;
 }
 
-footer a {
-    color: #ffeb3b;
-    text-decoration: none;
+.footer-left img {
+    width: 80px;
 }
 
-footer a:hover {
-    text-decoration: underline;
+.footer-right {
+    text-align: right;
+}
+
+.footer-right p {
+    margin: 0;
 }
 
 /* Animationen */
@@ -146,7 +134,7 @@ footer a:hover {
 }
 
 @media (max-width: 768px) {
-    header .container {
+    .header-container {
         flex-direction: column;
         align-items: center;
     }
@@ -156,8 +144,8 @@ footer a:hover {
         text-align: center;
     }
     
-    .skills {
+    .footer-container {
         flex-direction: column;
-        align-items: center;
+        text-align: center;
     }
 }
